@@ -1,0 +1,7 @@
+<div *ngIf="visitedCountries.length" class="visited-countries-wrapper">
+    <h5>Recently viewed countries</h5>
+    <div class="visited-countries">
+        <span class="visited-country-button " *ngFor="let visitedCountry of visitedCountries" [routerLink]="'/'+visitedCountry">{{visitedCountry}}</span>
+    </div>
+</div>
+<hr *ngIf="visitedCountries.length">

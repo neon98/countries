@@ -1,0 +1,11 @@
+<div class="card" (click)="open()">
+    <img class="card-img-top" [src]="country?.flags?.png" alt="Country image">
+    <div class="card-body">
+        <h4 class="card-title">{{country.name.common}}</h4>
+        <div class="card-text">
+            <p *ngIf="country?.population"> <strong>Population: </strong>{{country?.population?.toLocaleString('en-US')}}</p>
+            <p *ngIf="country?.region"> <strong>Region: </strong>{{country?.region}}</p>
+            <p *ngIf="country?.capital"> <strong>Capital: </strong>{{country?.capital}}</p>
+        </div>
+    </div>
+</div>

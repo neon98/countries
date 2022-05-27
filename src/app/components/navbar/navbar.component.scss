@@ -1,0 +1,32 @@
+.theme-change-button {
+    font-size: large;
+    background-color: transparent;
+    padding: var(--btn-padding);
+    padding-right: 0;
+    border: none;
+    border-radius: var(--border-radius);
+}
+
+.theme-chage-icon {
+    padding-right: 0.5rem;
+}
+
+.navbar {
+    padding: 1.5rem 10rem;
+}
+
+:host-context(.light) {
+    .navbar {
+        box-shadow: var(--light-shadow);
+    }
+}
+
+:host-context(.dark) {
+    .navbar {
+        background-color: var(--dark-secondary);
+        box-shadow: var(--dark-shadow);
+    }
+    .theme-change-button {
+        color: var(--light-primary);
+    }
+}

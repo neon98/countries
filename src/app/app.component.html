@@ -1,0 +1,5 @@
+<div [ngClass]="theme" class="app">
+    <div *ngIf="isLoading" class="loader"></div>
+    <app-navbar></app-navbar>
+    <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,7 @@
+<nav class="navbar justify-content-between">
+    <h4 style="padding: 0; margin: 0">Where in the world?</h4>
+    <button class="theme-change-button" (click)="toggleTheme()">
+        <fa-icon [icon]="(theme | async) === Theme.light ? darkThemeIcon : lightThemeIcon" class="theme-chage-icon"></fa-icon>
+        {{(theme | async) === Theme.light ? 'Dark': 'Light'}}
+    </button>
+</nav>

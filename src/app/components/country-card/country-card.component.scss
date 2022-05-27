@@ -1,0 +1,42 @@
+.card {
+    height: 100%;
+    cursor: pointer;
+    box-shadow: var(--light-shadow);
+    transition: transform .3s;
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+.card-img-top {
+    height: 15rem;
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+}
+
+.card-body {
+    padding: 1.5rem 1.5rem;
+}
+
+.card-text>p {
+    padding: 0;
+    margin: 0;
+}
+
+.card-title {
+    margin-bottom: 0.5rem;
+}
+
+:host-context(.light) {
+    .card {
+        background-color: var(--light-secondary);
+        box-shadow: var(--light-shadow);
+    }
+}
+
+ :host-context(.dark) {
+    .card {
+        background-color: var(--dark-secondary);
+        box-shadow: var(--dark-shadow);
+    }
+}

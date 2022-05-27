@@ -1,0 +1,38 @@
+.visited-countries-wrapper {
+    // padding: 2rem;
+    margin: 3rem 0 2rem 0;
+    // border-radius: var(--border-radius);
+}
+
+.visited-countries {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.visited-country-button {
+    cursor: pointer;
+    white-space: nowrap; // prevent line-break
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem 1.75rem;
+    border-radius: var(--border-radius);
+}
+
+:host-context(.light) {
+    .visited-country-button {
+        background-color: var(--light-secondary);
+        box-shadow: var(--light-shadow);
+    }
+}
+
+:host-context(.dark) {
+    .visited-country-button {
+        background-color: var(--dark-secondary);
+        box-shadow: var(--dark-shadow);
+    }
+}
+
+hr {
+    margin: 0;
+}

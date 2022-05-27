@@ -1,0 +1,25 @@
+<div class="home-wrapper">
+    <app-visited-countries></app-visited-countries>
+    <div class="row justify-content-between search-bar">
+        <div class="col-3">
+            <div class="input-group form-group search-country-input-group">
+                <span class="input-group-text"> <fa-icon [icon]="searchIcon"></fa-icon> </span>
+                <input type="text" class="form-control search-country-input" placeholder="Search for a country..." [(ngModel)]="countrySearchText">
+            </div>
+        </div>
+        <div class="col-3">
+            <div ngbDropdown>
+                <button type="button" class="col-12 region-dropdown-button" ngbDropdownToggle>{{selectedRegion}}</button>
+                <div ngbDropdownMenu>
+                    <button ngbDropdownItem class="region-dropdown-item" *ngFor="let region of regions; index as id" (click)="dropdownSelect(id)">{{region}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="country-grid">
+        <ng-container *ngFor="let country of countries| countryFilterPipe : countrySearchText">
+            <app-country-card *ngIf="hasSameRegion(country)" [country]="country"></app-country-card>
+        </ng-container>
+    </div>
+
+</div>

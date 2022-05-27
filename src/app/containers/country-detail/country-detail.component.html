@@ -1,0 +1,54 @@
+<div class="country-detail-wrapper">
+    <button class="back-button" [routerLink]="'/'">
+        <fa-icon class="back-btn-icon"[icon]="backIcon"></fa-icon> Back</button>
+    <div class="row" style="margin:0">
+        <section class="col-6 country-img-wrapper" style="padding: 0">
+            <img class="country-img " [src]="country?.flags?.png " alt="Country image ">
+        </section>
+        <section class="col-6 country-detail ">
+            <h2>{{country?.name?.common}}</h2>
+            <div class="row" style="margin-top: 2rem">
+                <div class="col-6 ">
+                    <div *ngIf="country?.name?.official">
+                        <strong>Official Name</strong>
+                        <p>{{country?.name?.official}}</p>
+                    </div>
+                    <div *ngIf="country?.capital">
+                        <strong>Capital</strong>
+                        <p>{{country?.capital}}</p>
+                    </div>
+                    <div *ngIf="country?.population">
+                        <strong>Population</strong>
+                        <p>{{country?.population?.toLocaleString('en-US')}}</p>
+                    </div>
+                    <div *ngIf="country?.languages">
+                        <strong>Languages</strong>
+                        <p>{{country?.languages ? getLanguages(country) : ''}}</p>
+                    </div>
+                </div>
+                <div class="col-6 ">
+                    <div *ngIf="country?.region">
+                        <strong>Region</strong>
+                        <p>{{country?.region}}</p>
+                    </div>
+                    <div *ngIf="country?.subregion">
+                        <strong>Sub Region</strong>
+                        <p>{{country?.subregion}}</p>
+                    </div>
+
+                    <div *ngIf="country?.currencies">
+                        <strong>Currencies</strong>
+                        <p>{{country.currencies ? getCurrencies(country) : ''}}</p>
+                    </div>
+                </div>
+
+            </div>
+            <div *ngIf="borderCountries.length > 0" class="row ">
+                <strong>Border countries</strong>
+                <div class="border-countries ">
+                    <span class="border-country-button " *ngFor="let borderCountry of borderCountries" (click)="open(borderCountry)">{{borderCountry.name.common}}</span>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
